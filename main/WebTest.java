@@ -119,7 +119,7 @@ public class WebTest {
 
     @AfterMethod
     public void tearDown() {
-        driver.executeScript("lambdastatus=" + Status);
+        driver.executeScript("lambda_status =" + Status);
         driver.quit();
     }
 
