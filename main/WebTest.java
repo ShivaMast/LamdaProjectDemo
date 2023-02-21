@@ -33,8 +33,9 @@ public class WebTest {
         String hub = "@hub.lambdatest.com/wd/hub";
 
         ChromeOptions browserOptions = new ChromeOptions();
-        browserOptions.setPlatformName("Windows 10");
-        browserOptions.setBrowserVersion("110.0");
+        browserOptions.setPlatformName("macOS Monterey");
+        browserOptions.setBrowserVersion("15");
+        browserOptions.setCapability("browserName", "Safari");
         HashMap<String, Object> ltOptions = new HashMap<String, Object>();
         ltOptions.put("username", "sshivukumar7");
         ltOptions.put("accessKey", "zxTvDdwsaFEBRS3fChDK0gMc9oklf3zsNoVcQHtFdAAx7bja5x");
@@ -119,7 +120,7 @@ public class WebTest {
 
     @AfterMethod
     public void tearDown() {
-        driver.executeScript("lambda_status =" + Status);
+        driver.executeScript("lambda-status" + Status);
         driver.quit();
     }
 
